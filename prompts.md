@@ -15,3 +15,15 @@
 * **Model:** Claude Code 
 * **Outcome:** The agent successfully documented the entire Jupyter Notebook, adding clear markdown headers and context descriptions above each code block. This ensures the experiment is self-documenting and easy for reviewers to follow.
 
+## Configuring Ruff and lint pass
+* **Prompt:** "configure ruff for my project to ensure a clean lint pass. After updating the configuration, run ruff on the notebook to clean up code and fix any formatting issues"
+* **Model:** Claude Code 
+* **Outcome:** Ruff found and fixed 6 lint errors (likely unused imports like pd, Pipeline, cross_val_score, GridSearchCV) and reformatted the notebook for consistent style.
+
+## Testing 
+* **Prompt:** "write pytest unit tests for:
+1) Downsampling to check that output has exactly 5000 samples and that no duplicate indices were selected
+2) the train/test split to ensure split is 80/20 and theres no overlap between the train and test indices.
+3) StandardScaler to ensure x_train has mean 0 and std 1 after scaling and that x_test is transformed using train statistics. Also the scaler raises if transform is called before fit"
+* **Model:** Claude Code 
+* **Outcome:** All 7 tests passed
